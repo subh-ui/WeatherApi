@@ -42,7 +42,8 @@
                     }
                 })
                 .catch(error => {
-                    document.getElementById('weatherResult').innerHTML = `<p style="color:red;">Error: ${error.message}</p>`;
+                    let message= error.message.includes("Parameter q is missing.")?"Please enter a city name to search for weather": "Something went wrong. Please try again.";
+                    document.getElementById('weatherResult').innerHTML = `<p style="color:red;">Empty field!! Please enter a valid location</p>`;
                 });
         });
     </script>
